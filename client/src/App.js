@@ -4,36 +4,7 @@ import LoginPage from "./pages/Login";
 
 import axios from "axios";
 
-export const API_URL = "http://localhost:8080";
-
 export default class App extends Component {
-  state = {
-    loggedIn: false,
-    user: {},
-  };
-
-  componentDidMount() {
-    axios
-      .get(`${API_URL}/api/users/profile`, { withCredentials: true })
-      .then(
-        (response) => {
-          console.log(response);
-          if (response.data.user !== undefined) {
-            this.setState({
-              loggedIn: true,
-              user: response.data.user,
-            });
-          }
-        },
-        () => {
-          this.setState({
-            loggedIn: false,
-          });
-        }
-      )
-      .catch((error) => console.log(error));
-  }
-
   render() {
     return (
       <BrowserRouter>
@@ -44,15 +15,15 @@ export default class App extends Component {
               <Link to="/login">Login Page</Link>
             ) : (
               <>
-                <h2>Welcome {this.state.user.name}</h2>
+                <h2>Welcome USER NAME</h2>
                 <div>
                   <img
-                    src={this.state.user.avatar}
+                    src={"PLACEHOLDER"}
                     style={{ width: 25 }}
                     alt="user avatar"
                   />
                 </div>
-                <a href={`${API_URL}/api/auth/logout`}>Logout</a>
+                <a href={`/`}>Logout</a>
               </>
             )}
           </div>
