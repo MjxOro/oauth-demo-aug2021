@@ -2,6 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
+const passport = require("./middleware/passport")
+const authRoutes = require("./routes/auth")
+const authRoutes = require("./routes/auth")
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -18,7 +21,11 @@ app.use(morgan("dev"));
 // --- 2 END ---
 
 // --- 3 ---
+app.use("/api/auth", authRoutes)
+
 // --- 3 END ---
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
