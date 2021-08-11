@@ -57,8 +57,10 @@ app.use(passport.session());
 
 ### ON THE FRONT END
 
+- [ ] Create some routes
+- [ ] Set it up so App has a state that shows the user status and a boolean that checks if authenticated
 - [ ] When you are logging in, make an axios call to http://localhost:8080/api/auth/github in your react app
-- [ ]When you are logging out, make an axios call to http://localhost:8080/api/auth/logout in your react app
+- [ ] When you are logging out, make an axios call to http://localhost:8080/api/auth/logout in your react app
 
 ## Is this the only option to do this?!
 
@@ -68,3 +70,8 @@ There are third party services "authentication as a service" which may charge $ 
 - Okta
 - UserFront
 - FireBase [offers authentication](https://firebase.google.com/products/auth) along with their main product of Database As A Service
+
+## References
+
+- https://mherman.org/blog/social-authentication-with-passport-dot-js/
+- https://github.com/leannezhang/twitter-authentication
