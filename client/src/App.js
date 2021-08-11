@@ -41,7 +41,11 @@ class App extends Component {
           <>
             <h2>Welcome {this.state.user.name}</h2>
             <div>
-              <img src={this.state.user.avatar} alt="user avatar" />
+              <img
+                src={this.state.user.avatar}
+                style={{ width: 25 }}
+                alt="user avatar"
+              />
             </div>
             <a href={`${API_URL}/api/auth/logout`}>Logout</a>
           </>
